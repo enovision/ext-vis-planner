@@ -1,0 +1,73 @@
+/*
+Depending on the zoom level, the grids get certain css classes attached. The following classes are available:
+
+Description	values
+Alternating columns	even, odd
+Current date	today, tomorrow, yesterday, current-week, current-month, current-year
+Hours	0h, 1h, ..., 23h
+Grouped hours	0-4h to 20-24h
+Weekday	monday, tuesday, wednesday, thursday, friday, saturday, sunday
+Days	date1, date2, ..., date31
+Months	januari, februari, march, april, may, june, july, august, september, october, november, december
+Years	year2014, year2015, ...
+*/
+
+$vis-timeline-item-font-size: 12px;
+$vis-timeline-item-border: 1px solid #276fff;
+$vis-timeline-item-bg-color: #419eff;
+$vis-timeline-item-color: #ffffff;
+$vis-timeline-item-content-padding: 2px;
+
+$vis-timeline-item-selected-border: 4px solid #ff0925;
+$vis-timeline-item-selected-bg-color: #419eff;
+$vis-timeline-item-selected-color: #ffffff;
+
+$vis-timeline-alt-grid-bg-color: #f5f5f5;
+$vis-timeline-weekend-bg-color: #e3f0f3;
+$vis-timeline-weekend-text-color: white;
+$vis-timeline-label-header-bg-color: #f1f1f1;
+
+$vis-timeline-minor-border-color: #b7b7b7;
+
+.vis-timeline .vis-panel.vis-left,
+.vis-timeline .vis-time-axis.vis-foreground {
+  background: $vis-timeline-label-header-bg-color;
+}
+
+.vis-timeline .vis-item.vis-selected {
+  border: $vis-timeline-item-selected-border;
+  background-color: $vis-timeline-item-selected-bg-color;
+  color: $vis-timeline-item-selected-color;
+}
+
+.vis-timeline .vis-item {
+  // border: $vis-timeline-item-border;
+  background-color: $vis-timeline-item-bg-color;
+  color: $vis-timeline-item-color;
+  font-size: $vis-timeline-item-font-size;
+}
+
+.vis-timeline .vis-item .vis-item-content {
+  padding: $vis-timeline-item-content-padding !important;
+}
+
+/* alternating column backgrounds */
+.vis-timeline .vis-time-axis .vis-grid.vis-odd {
+  background: $vis-timeline-alt-grid-bg-color;
+}
+
+/* border left of the minor labels */
+.vis-timeline .vis-time-axis .vis-grid.vis-minor {
+  border-color: $vis-timeline-minor-border-color;
+}
+
+/* gray background in weekends, white text color */
+.vis-timeline .vis-time-axis .vis-grid.vis-saturday,
+.vis-timeline .vis-time-axis .vis-grid.vis-sunday {
+  background: $vis-timeline-weekend-bg-color;
+}
+
+.vis-timeline .vis-time-axis .text.saturday,
+.vis-timeline .vis-time-axis .text.sunday {
+  color: $vis-timeline-weekend-text-color;
+}

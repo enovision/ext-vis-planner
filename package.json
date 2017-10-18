@@ -1,0 +1,108 @@
+{
+  /**
+   * The name of the package.
+   */
+  "name": "ext-vis-planner",
+  "sencha": {
+    "namespace": "VisPlanner",
+    "type": "code",
+    "toolkit": "classic",
+    "creator": "Johan van de Merwe",
+    "summary": "Ext JS Timeline Panel based on Vis.js",
+    "detailedDescription": "Ext JS Timeline Panel based on Vis.js",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "slicer": {
+      "js": [
+        {
+          "path": "${package.dir}/sass/example/custom.js",
+          "isWidgetManifest": true
+        }
+      ]
+    },
+    "output": "${package.dir}/build",
+    "local": true,
+    "sass": {
+      "namespace": "VisPlanner",
+      "etc": [
+        "${package.dir}/sass/etc/all.scss"
+      ],
+      "var": [
+        "${package.dir}/sass/var"
+      ],
+      "src": [
+        "${package.dir}/sass/src"
+      ]
+    },
+    "classpath": [
+      "${package.dir}/src"
+    ],
+    "overrides": [
+      "${package.dir}/overrides",
+      "${package.dir}/${toolkit.name}/overrides",
+      "${package.dir}/locale/${package.locale}"
+    ],
+    "production": {
+      "js": [
+        {
+          "path": "resources/ext-vis-planner/moment.js/moment-with-locales.js",
+          "remote": true
+        },
+        /*
+        {
+          "path": "resources/ext-vis-planner/hammer.js/hammer.min.js",
+          "remote": true
+        }, */
+        {
+          "path": "resources/ext-vis-planner/vis/vis.js",
+          "remote": true
+        }
+        /*
+        {
+          "path": "resources/handlebars/handlebars.runtime.min.js",
+          "includeInBundle": true
+        }*/
+      ],
+      "css": [
+        {
+          "path": "resources/VisPlanner/vis/vis.min.css",
+          "remote": true
+        }
+      ]
+    },
+    "development": {
+      "js": [
+        {
+          "path": "resources/moment.js/moment-with-locales.min.js"
+        },
+        /*
+        {
+          "path": "resources/ext-vis-planner/hammer.js/hammer.min.js"
+        }, */
+        {
+          "path": "resources/vis/vis.min.js"
+        }
+        /*
+        {
+          "path": "resources/handlebars/handlebars.runtime.min.js",
+          "includeInBundle": true
+        }*/
+      ],
+      "css": [
+        {
+          "path": "resources/vis/vis.min.css"
+        }
+      ]
+    },
+    "resources": [
+      {
+        "path": "resources",
+        "output": "shared"
+      }
+    ],
+    "requires": [
+      'font-awesome'
+    ]
+  }
+}
